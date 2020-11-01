@@ -5,9 +5,17 @@ using UnityEngine;
 public class Defender : MonoBehaviour
 {
     // Configuration parameters
-    [SerializeField] GameObject gun;
-    [SerializeField] GameObject cactusThorn;
-    public void Fire() {
-        Instantiate(cactusThorn, gun.transform.position, gun.transform.rotation);
+    [SerializeField] int spawnCost = 100;
+
+    public int GetSpawnCost()
+    {
+        return spawnCost;
     }
+
+    public void AddSeeds(int amount)
+    {
+        FindObjectOfType<SeedsDisplay>().AddSeeds(amount);
+    }
+
+    
 }

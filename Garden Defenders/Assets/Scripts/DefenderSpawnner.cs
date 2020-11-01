@@ -5,11 +5,27 @@ using UnityEngine;
 
 public class DefenderSpawnner : MonoBehaviour
 {
-    // Configuration parameters
-    [SerializeField] GameObject defender;
+    // State variables
+    private Defender defender;
+
+    public void SetDefender(Defender defender)
+    {
+        this.defender = defender;
+    }
+
+    private void PlaceDefender(Vector2 gridPos)
+    {
+        SeedsDisplay seedDisplay = FindObjectOfType<SeedsDisplay>();
+        int defenderCost = defender.GetSpawnCost();
+        if (seedDisplay.HaveEnoughSeeds(defenderCost))
+        {
+            SpawnDefender(gridPos);
+            seedDisplay.SpendSeeds(defenderCost);
+        }
+    }
     private void OnMouseDown()
     {
-        SpawnDefender(GetSquareClicked());
+        PlaceDefender(GetSquareClicked());
     }
 
     private Vector2 GetSquareClicked()
