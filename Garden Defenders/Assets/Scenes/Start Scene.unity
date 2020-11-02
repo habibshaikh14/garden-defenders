@@ -424,7 +424,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 959282464}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3891789650006715889}
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &959282464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -587,7 +598,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 979484734}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3891789650006715889}
+        m_MethodName: LoadNextScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1176446956
 GameObject:
   m_ObjectHideFlags: 0
@@ -758,3 +780,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 805995f91b74a8e4e95c23309f852977, type: 3}
+--- !u!114 &3891789650006715889 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1477992309, guid: 805995f91b74a8e4e95c23309f852977,
+    type: 3}
+  m_PrefabInstance: {fileID: 3891789650006715888}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 527f2b10deff7284f8e07c873994debe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
