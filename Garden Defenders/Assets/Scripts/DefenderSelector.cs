@@ -1,11 +1,26 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DefenderSelector : MonoBehaviour
 {
     // Configuration parameters
     [SerializeField] Defender defender;
+
+    private void Start() {
+        LabelButtonsWithCost();
+    }
+
+    private void LabelButtonsWithCost()
+    {
+        Text cost = GetComponentInChildren<Text>();
+        if (cost)
+        {
+            cost.text = defender.GetSpawnCost().ToString();
+        }
+    }
 
     private void OnMouseDown()
     {

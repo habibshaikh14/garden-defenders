@@ -9,6 +9,22 @@ public class Attacker : MonoBehaviour
     private float currentSpeed = 0f;
     private GameObject currentTarget;
 
+    private void Awake() {
+        LevelController levelController = FindObjectOfType<LevelController>();
+        if (levelController)
+        {
+            levelController.EnemySpawned();
+        }
+    }
+
+    private void OnDestroy() {
+        LevelController levelController = FindObjectOfType<LevelController>();
+        if (levelController)
+        {
+            levelController.EnemyKilled();
+        }
+    }
+
     void Update()
     {
         transform.Translate(Vector2.left * currentSpeed * Time.deltaTime);

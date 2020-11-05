@@ -7,6 +7,21 @@ public class DefenderSpawnner : MonoBehaviour
 {
     // State variables
     private Defender defender;
+    private GameObject defenderParent;
+    private const string DEFENDER_PARENT_NAME = "Defenders";
+
+    private void Start() {
+        CreateDefenderParent();
+    }
+
+    private void CreateDefenderParent()
+    {
+        defenderParent = GameObject.Find(DEFENDER_PARENT_NAME);
+        if (!defenderParent)
+        {
+            defenderParent = new GameObject(DEFENDER_PARENT_NAME);
+        }
+    }
 
     public void SetDefender(Defender defender)
     {
@@ -44,6 +59,7 @@ public class DefenderSpawnner : MonoBehaviour
 
     private void SpawnDefender(Vector2 worldPos)
     {
-        Instantiate(defender, worldPos, Quaternion.identity);
+        Defender defender = Instantiate(this.defender, worldPos, Quaternion.identity) as Defender;
+        defender.transform.parent = defenderParent.transform;
     }
 }
